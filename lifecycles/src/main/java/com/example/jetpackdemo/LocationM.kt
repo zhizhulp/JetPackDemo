@@ -7,25 +7,18 @@ import androidx.lifecycle.OnLifecycleEvent
 
 class LocationM : LifecycleObserver {
     val TAG = "LocationM";
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    public fun create(){
-        Log.d(TAG,"create location manager")
-    }
-
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     public fun start(){
-        Log.d(TAG,"start locate")
+        Log.d(TAG,"start()")
+    }
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    public fun create(){
+        Log.d(TAG,"create()")
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     public fun stop(){
-        Log.d(TAG,"stop locate")
+        Log.d(TAG,"stop()")
     }
 
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
-    public fun any(){
-        //Log.d(TAG,"any()")
-    }
 }

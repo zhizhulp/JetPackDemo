@@ -15,36 +15,47 @@ class MainActivity : AppCompatActivity() {
         tv.setOnClickListener {
             startActivity(Intent(this@MainActivity,Main2Activity::class.java))
         }
-        lifecycle.addObserver(LocationM())
+        //lifecycle.addObserver(LocationM())
+        lifecycle.addObserver(LocationMPlus(lifecycle))
+        /*
+        不应此在activity中调用lifecycle.currentState.name，而是应该在observer中调用即在LocationM中调用
+         */
+        //Log.d(TAG,"lifecycle-${lifecycle.currentState.name}")
     }
 
     override fun onStart() {
         Log.d(TAG,"onStart")
         super.onStart()
+        //Log.d(TAG,"lifecycle-${lifecycle.currentState.name}")
     }
 
     override fun onResume() {
         Log.d(TAG,"onResume")
         super.onResume()
+        //Log.d(TAG,"lifecycle-${lifecycle.currentState.name}")
     }
 
     override fun onPause() {
         Log.d(TAG,"onPause")
         super.onPause()
+        //Log.d(TAG,"lifecycle-${lifecycle.currentState.name}")
     }
 
     override fun onStop() {
         Log.d(TAG,"onStop")
         super.onStop()
+        //Log.d(TAG,"lifecycle-${lifecycle.currentState.name}")
     }
 
     override fun onDestroy() {
         Log.d(TAG,"onDestroy")
         super.onDestroy()
+        //Log.d(TAG,"lifecycle-${lifecycle.currentState.name}")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         Log.d(TAG,"onSaveInstanceState")
         super.onSaveInstanceState(outState)
+        //Log.d(TAG,"lifecycle-${lifecycle.currentState.name}")
     }
 }
