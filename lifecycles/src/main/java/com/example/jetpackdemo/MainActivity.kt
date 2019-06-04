@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tv.setOnClickListener {
-            startActivity(Intent(this@MainActivity,Main2Activity::class.java))
+            startActivity(Intent(this@MainActivity,MainOwnerActivity::class.java))
         }
         //lifecycle.addObserver(LocationM())
-        lifecycle.addObserver(LocationMPlus(lifecycle))
+        lifecycle.addObserver(LocationMPlus(lifecycle,"LocationMain"))
         /*
         不应此在activity中调用lifecycle.currentState.name，而是应该在observer中调用即在LocationM中调用
          */

@@ -5,30 +5,29 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 
-class LocationMPlus(private  val lifecycle:Lifecycle): LifecycleObserver {
-    private val TAG ="LocationM"
+class LocationMPlus(private  val lifecycle:Lifecycle ,private val tag: String): LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun create(){
-        Log.d(TAG,"create-${lifecycle.currentState.name}")
+        Log.d(tag,"create-${lifecycle.currentState.name}")
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun start(){
-        Log.d(TAG,"start-${lifecycle.currentState.name}")
+        Log.d(tag,"start-${lifecycle.currentState.name}")
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun resume(){
-        Log.d(TAG,"resume-${lifecycle.currentState.name}")
+        Log.d(tag,"resume-${lifecycle.currentState.name}")
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun pause(){
-        Log.d(TAG,"pause-${lifecycle.currentState.name}")
+        Log.d(tag,"pause-${lifecycle.currentState.name}")
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun stop(){
-        Log.d(TAG,"stop-${lifecycle.currentState.name}")
+        Log.d(tag,"stop-${lifecycle.currentState.name}")
     }
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun destroy(){
-        Log.d(TAG,"destroy-${lifecycle.currentState.name}")
+        Log.d(tag,"destroy-${lifecycle.currentState.name}")
     }
 }
