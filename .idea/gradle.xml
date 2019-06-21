@@ -8,7 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/color" />
+            <option value="$PROJECT_DIR$/databinding" />
             <option value="$PROJECT_DIR$/lifecycles" />
+            <option value="$PROJECT_DIR$/livedata" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

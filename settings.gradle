@@ -1,1 +1,1 @@
-include ':lifecycles'
+include ':lifecycles', ':databinding', ':color', ':livedata'

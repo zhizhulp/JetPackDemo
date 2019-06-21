@@ -13,6 +13,10 @@ open class LifeOwnerActivity: Activity(),LifecycleOwner {
         register.currentState = Lifecycle.State.CREATED
     }
 
+    override fun getLifecycle(): Lifecycle {
+        return register
+    }
+
     override fun onStart() {
         super.onStart()
         register.currentState = Lifecycle.State.STARTED
@@ -43,7 +47,4 @@ open class LifeOwnerActivity: Activity(),LifecycleOwner {
         register.currentState = Lifecycle.State.DESTROYED
     }
 
-    override fun getLifecycle(): Lifecycle {
-        return register
-    }
 }
